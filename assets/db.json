@@ -1,0 +1,76 @@
+{
+  "users": [{ "id": 1, "name": "admin", "password": "1234" }],
+  "products": [
+    {
+      "id": 1,
+      "name": "martillo",
+      "category": "Ferreteria",
+      "stock": 10,
+      "registrationDate": "12/02/2022"
+    },
+    {
+      "id": 2,
+      "name": "Estante",
+      "category": "Muebles",
+      "stock": 10,
+      "registrationDate": "12/02/2022"
+    },
+    {
+      "id": 3,
+      "name": "Sillon",
+      "category": "Muebles",
+      "stock": 10,
+      "registrationDate": "12/02/2022"
+    },
+    {
+      "id": 4,
+      "name": "Casco",
+      "category": "Seguridad",
+      "stock": 10,
+      "registrationDate": "12/02/2022"
+    },
+    {
+      "id": 5,
+      "name": "Laptop",
+      "category": "Informatica",
+      "stock": 10,
+      "registrationDate": "12/02/2022"
+    },
+    {
+      "id": 6,
+      "name": "Plancha",
+      "category": "Electrodomesticos",
+      "stock": 10,
+      "registrationDate": "12/02/2022"
+    },
+    {
+      "id": 7,
+      "name": "Taladro",
+      "category": "Ferreteria",
+      "stock": 10,
+      "registrationDate": "12/02/2022"
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "name": "Ferreteria"
+    },
+    {
+      "id": 2,
+      "name": "Muebles"
+    },
+    {
+      "id": 3,
+      "name": "Seguridad"
+    },
+    {
+      "id": 4,
+      "name": "Informatica"
+    },
+    {
+      "id": 5,
+      "name": "Electrodomesticos"
+    }
+  ]
+}
