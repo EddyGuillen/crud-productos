@@ -6,16 +6,31 @@ const d = document,
   $btnSearch = d.getElementById("btn-search"),
   $inputSearch = d.getElementById("input-search"),
   $form = d.querySelector(".crud-form"),
-  $addProduct = d.getElementById("add-product");
+  $addProduct = d.getElementById("add-product"),
+  $formAdd = d.getElementById("form-add"),
+  $formEdit = d.getElementById("form-edit");
 
 const getAll = async () => {
   try {
-    let res = await fetch("http://localhost:3000/products");
-    json = await res.json();
+    let $options = `<option value="" selected>Seleccione Categoría</option>`,
+      productsFetch = await fetch(`http://localhost:3000/products`),
+      categoryFetch = await fetch(`http://localhost:3000/category`),
+      [productsRes, categoryRes] = await Promise.all([
+        productsFetch,
+        categoryFetch,
+      ]),
+      productsData = await productsRes.json(),
+      categoryData = await categoryRes.json();
 
-    if (!res.ok) throw { status: res.status, statusText: res.statusText };
+    categoryData.forEach((el) => {
+      $options += `<option value="${el.name}">${el.name}</option>`;
+    });
 
-    json.forEach((el) => {
+    $select.innerHTML = $options;
+    d.getElementById("select-modal").innerHTML = $options;
+    d.getElementById("select-modal-edit").innerHTML = $options;
+
+    productsData.forEach((el) => {
       $template.querySelector(".name").textContent = el.name;
       $template.querySelector(".category").textContent = el.category;
       $template.querySelector(".date").textContent = el.registrationDate;
@@ -45,6 +60,7 @@ const getAll = async () => {
 d.addEventListener("DOMContentLoaded", getAll);
 
 d.addEventListener("submit", async (e) => {
+  /* <----------- Search ---------->*/
   if (e.target === $form) {
     e.preventDefault();
 
@@ -81,7 +97,7 @@ d.addEventListener("submit", async (e) => {
         $table.querySelector("tbody").appendChild($fragment);
       } else {
         $table.querySelector("tbody").innerHTML = "";
-        d.querySelector(".alert").textContent = "No se encontraro resultados";
+        d.querySelector(".alert").textContent = "No se encontraron resultados";
       }
     } catch (err) {
       let message = err.statusText || "Ocurrió un error";
@@ -91,5 +107,43 @@ d.addEventListener("submit", async (e) => {
         `<p><b>Error ${err.status}: ${message}</b></p>`
       );
     }
+  }
+
+  /* CREATE-POST */
+  if (e.target === $formAdd) {
+    let date = new Date(Date.now());
+    date = date.toLocaleDateString("en-GB");
+    e.preventDefault();
+
+    try {
+      let options = {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json; charset=utf-8",
+          },
+          body: JSON.stringify({
+            name: e.target.name.value,
+            category: e.target.category.value,
+            stock: e.target.stock.value,
+            registrationDate: date,
+          }),
+        },
+        res = await fetch("http://localhost:3000/products", options),
+        json = await res.json();
+      if (!res.ok) throw { status: res.status, statusText: res.statusText };
+    } catch (err) {
+      let message = err.statusText || "Ocurrió un error";
+      $formAdd.insertAdjacentHTML(
+        "afterend",
+        `<p><b>Error ${err.status}: ${message}</b></p>`
+      );
+    }
+  }
+
+  /* UPDATE- PUT */
+  if (e.target === $formEdit) {
+    try {
+      let options;
+    } catch (err) {}
   }
 });

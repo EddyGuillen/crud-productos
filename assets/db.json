@@ -1,5 +1,11 @@
 {
-  "users": [{ "id": 1, "name": "admin", "password": "1234" }],
+  "users": [
+    {
+      "id": 1,
+      "name": "admin",
+      "password": "1234"
+    }
+  ],
   "products": [
     {
       "id": 1,
@@ -49,6 +55,76 @@
       "category": "Ferreteria",
       "stock": 10,
       "registrationDate": "12/02/2022"
+    },
+    {
+      "name": "SSD",
+      "category": "Informatica",
+      "stock": "30",
+      "registrationDate": "04/02/2023",
+      "id": 8
+    },
+    {
+      "name": "Estante",
+      "category": "Muebles",
+      "stock": "30",
+      "registrationDate": "04/02/2023",
+      "id": 9
+    },
+    {
+      "name": "Teclado",
+      "category": "Informatica",
+      "stock": "10",
+      "registrationDate": "04/02/2023",
+      "id": 10
+    },
+    {
+      "name": "Mouse",
+      "category": "Informatica",
+      "stock": "20",
+      "registrationDate": "04/02/2023",
+      "id": 11
+    },
+    {
+      "name": "Destornillador",
+      "category": "Ferreteria",
+      "stock": "23",
+      "registrationDate": "04/02/2023",
+      "id": 12
+    },
+    {
+      "name": "Alarma",
+      "category": "Seguridad",
+      "stock": "23",
+      "registrationDate": "04/02/2023",
+      "id": 13
+    },
+    {
+      "name": "Licuadora",
+      "category": "Electrodomesticos",
+      "stock": "23",
+      "registrationDate": "04/02/2023",
+      "id": 14
+    },
+    {
+      "name": "Eddy Guillén ",
+      "category": "Seguridad",
+      "stock": "1",
+      "registrationDate": "04/02/2023",
+      "id": 15
+    },
+    {
+      "name": "Ggb",
+      "category": "Muebles",
+      "stock": "34",
+      "registrationDate": "04/02/2023",
+      "id": 16
+    },
+    {
+      "name": "Eddy Guillén ",
+      "category": "Seguridad",
+      "stock": "123",
+      "registrationDate": "04/02/2023",
+      "id": 17
     }
   ],
   "category": [
