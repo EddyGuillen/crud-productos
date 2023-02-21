@@ -79,8 +79,11 @@ d.addEventListener('submit', async (e) => {
       if (!res.ok) throw { status: res.status, statusText: res.statusText };
 
       if (json.length > 0) {
+        let index = 0;
         d.querySelector('.alert').textContent = '';
         json.forEach((el) => {
+          index++;
+          $template.querySelector('.index').textContent = index;
           $template.querySelector('.name').textContent = el.name;
           $template.querySelector('.category').textContent = el.category;
           $template.querySelector('.date').textContent = el.registrationDate;
