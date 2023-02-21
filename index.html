@@ -106,7 +106,7 @@
             ></button>
           </div>
 
-          <form id="form-edit">
+          <form id="form-add">
             <div class="modal-body">
               <div class="mb-3">
                 <label for="name-add" class="form-label">Nombre</label>
@@ -167,9 +167,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="formEditLabel">
-              Agregar Nuevo Producto
-            </h1>
+            <h1 class="modal-title fs-5" id="formEditLabel">Editar Producto</h1>
             <button
               type="button"
               class="btn-close"
@@ -178,14 +176,16 @@
             ></button>
           </div>
 
-          <form id="form-add">
+          <form id="form-edit">
             <div class="modal-body">
+              <input type="hidden" name="id" />
+              <input type="hidden" name="date" />
               <div class="mb-3">
                 <label for="name-add" class="form-label">Nombre</label>
                 <input
                   type="text"
                   class="form-control"
-                  id="name-add"
+                  id="name-edit"
                   name="name"
                   required
                 />
@@ -231,24 +231,22 @@
     <!-- Template tables -->
     <template id="crud-template">
       <tr>
-        <th scope="index">1</th>
+        <th class="index">1</th>
         <td class="name"></td>
         <td class="category"></td>
         <td class="stock"></td>
         <td class="date"></td>
         <td class="d-flex">
           <button
-            class="btn edit"
+            class="btn edit bi bi-pen"
             id="edit-product"
             data-bs-toggle="modal"
             data-bs-target="#formEdit"
           >
-            <i class="bi bi-pen"></i>
+            <!--  <i class="bi bi-pen"></i> -->
           </button>
 
-          <button class="btn delete">
-            <i class="bi bi-trash"></i>
-          </button>
+          <button class="btn delete bi bi-trash"></button>
         </td>
       </tr>
     </template>

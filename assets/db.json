@@ -8,11 +8,11 @@
   ],
   "products": [
     {
-      "id": 1,
-      "name": "martillo",
+      "name": "martillos",
       "category": "Ferreteria",
-      "stock": 10,
-      "registrationDate": "12/02/2022"
+      "stock": "14",
+      "registrationDate": "19/02/2022",
+      "id": 1
     },
     {
       "id": 2,
@@ -107,24 +107,10 @@
     },
     {
       "name": "Eddy Guillén ",
-      "category": "Seguridad",
-      "stock": "1",
-      "registrationDate": "04/02/2023",
+      "category": "Informatica",
+      "stock": "23",
+      "registrationDate": "20/02/2023",
       "id": 15
-    },
-    {
-      "name": "Ggb",
-      "category": "Muebles",
-      "stock": "34",
-      "registrationDate": "04/02/2023",
-      "id": 16
-    },
-    {
-      "name": "Eddy Guillén ",
-      "category": "Seguridad",
-      "stock": "123",
-      "registrationDate": "04/02/2023",
-      "id": 17
     }
   ],
   "category": [
