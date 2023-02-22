@@ -104,6 +104,13 @@
       "stock": "23",
       "registrationDate": "04/02/2023",
       "id": 14
+    },
+    {
+      "name": "Plancha",
+      "category": "Electrodomesticos",
+      "stock": "12",
+      "registrationDate": "22/02/2023",
+      "id": 15
     }
   ],
   "category": [
