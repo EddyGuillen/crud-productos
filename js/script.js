@@ -45,6 +45,7 @@ const getAll = async () => {
       $template.querySelector('.edit').dataset.registrationDate =
         el.registrationDate;
       $template.querySelector('.delete').dataset.id = el.id;
+      $template.querySelector('.delete').dataset.name = el.name;
 
       let $clone = d.importNode($template, true);
       $fragment.appendChild($clone);
@@ -191,7 +192,8 @@ d.addEventListener('click', async (e) => {
 
   if (e.target.matches('.delete')) {
     let isDelete = confirm(
-      `¿Esta seguro de eliminar el id ${e.target.dataset.id}?`
+      `Va a eliminar el producto "${e.target.dataset.name}".
+      ¿Desea continuar?`
     );
 
     if (isDelete) {
